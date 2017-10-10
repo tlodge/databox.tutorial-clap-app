@@ -1,1 +1,53 @@
-{"app":{"name":"clapapp2","description":"testing clap to turn lights on or off","tags":"clap,on,off","id":"a9452121.5de52"},"packages":[{"type":"tab","id":"3f124e16.a4f622","name":"new package","risks":"","benefits":"lots of benefits","purpose":"to test clapping on or off","install":"optional","datastores":[{"id":"72e84bd5.616934","name":"sensingkit","type":"light"},{"id":"de9452a7.b3516","name":"bulbsout","type":"set-bulb-on"}]}],"allowed-combinations":[]}
+{
+    "manifest-version": 1,
+    "name": "tlodge-clapapp2",
+    "version": "0.1.0",
+    "description": "testing clap to turn lights on or off",
+    "author": "tlodge",
+    "licence": "MIT",
+    "databox-type": "app",
+    "tags": [
+        "clap",
+        "on",
+        "off"
+    ],
+    "homepage": "https://github.com/tlodge/tlodge-clapapp2",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tlodge/tlodge-clapapp2.git"
+    },
+    "packages": [
+        {
+            "id": "3f124e16.a4f622",
+            "name": "new package",
+            "purpose": "to test clapping on or off",
+            "required": false,
+            "datastores": [
+                "72e84bd5.616934",
+                "de9452a7.b3516"
+            ],
+            "benefits": "lots of benefits"
+        }
+    ],
+    "allowed-combinations": [],
+    "datasources": [
+        {
+            "type": "light",
+            "required": true,
+            "name": "sensingkit",
+            "clientid": "72e84bd5.616934",
+            "granularities": []
+        },
+        {
+            "type": "set-bulb-on",
+            "required": true,
+            "name": "bulbsout",
+            "clientid": "de9452a7.b3516",
+            "granularities": []
+        }
+    ],
+    "network-permissions": [],
+    "resource-requirements": {},
+    "volumes": [],
+    "export-whitelist": []
+}
