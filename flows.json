@@ -1,1 +1,97 @@
-[{"id":"3f124e16.a4f622","label":"new package","type":"tab"},{"id":"72e84bd5.616934","type":"sensingkit","z":"3f124e16.a4f622","name":"","subtype":"light","x":149,"y":406,"wires":[["d672ed31.0d58e","c70f077c.4d0418"]]},{"id":"d672ed31.0d58e","type":"dbfunction","z":"3f124e16.a4f622","name":"","func":"const state = context.get(\"state\") || \"on\";\ncontext.set(\"state\", state===\"on\" ? \"off\" : \"on\");\n\nif (msg.payload.value > 5000){\n    return {\n        type: \"set-bulb-on\",\n        payload: state,\n    }\n}","outputs":1,"inputtypedef":"","outputtypedef":"","noerr":0,"x":301,"y":494,"wires":[["de9452a7.b3516"]]},{"id":"de9452a7.b3516","type":"bulbsout","z":"3f124e16.a4f622","name":"","subtype":"set-bulb-on","value":"","x":510,"y":493,"wires":[]},{"id":"c70f077c.4d0418","type":"chartify","z":"3f124e16.a4f622","name":"","title":"","chart":"gauge","xlabel":"","ylabel":"","min":"","max":"","labels":"","maxreadings":"","ticks":"","xtype":[{"source":"sensingkit","name":"value","type":"number"}],"ytype":[],"subtype":"bar","x":306,"y":336,"wires":[["46f58a41.743ae4"]]},{"id":"46f58a41.743ae4","type":"app","z":"3f124e16.a4f622","name":"","appId":"webapp","layout":[["c70f077c.4d0418"]],"x":504,"y":338,"wires":[]}]
+[
+    {
+        "id": "3f124e16.a4f622",
+        "label": "new package",
+        "type": "tab"
+    },
+    {
+        "id": "72e84bd5.616934",
+        "type": "sensingkit",
+        "z": "3f124e16.a4f622",
+        "name": "",
+        "subtype": "light",
+        "x": 149,
+        "y": 406,
+        "wires": [
+            [
+                "d672ed31.0d58e",
+                "c70f077c.4d0418"
+            ]
+        ]
+    },
+    {
+        "id": "d672ed31.0d58e",
+        "type": "dbfunction",
+        "z": "3f124e16.a4f622",
+        "name": "",
+        "func": "const state = context.get(\"state\") || \"on\";\ncontext.set(\"state\", state===\"on\" ? \"off\" : \"on\");\n\nif (msg.payload.value > 5000){\n    return {\n        type: \"set-bulb-on\",\n        payload: state,\n    }\n}",
+        "outputs": 1,
+        "inputtypedef": "",
+        "outputtypedef": "",
+        "noerr": 0,
+        "x": 301,
+        "y": 494,
+        "wires": [
+            [
+                "de9452a7.b3516"
+            ]
+        ]
+    },
+    {
+        "id": "de9452a7.b3516",
+        "type": "bulbsout",
+        "z": "3f124e16.a4f622",
+        "name": "",
+        "subtype": "set-bulb-on",
+        "value": "",
+        "x": 510,
+        "y": 493,
+        "wires": []
+    },
+    {
+        "id": "c70f077c.4d0418",
+        "type": "chartify",
+        "z": "3f124e16.a4f622",
+        "name": "",
+        "title": "",
+        "chart": "gauge",
+        "xlabel": "",
+        "ylabel": "",
+        "min": "",
+        "max": "",
+        "labels": "",
+        "maxreadings": "",
+        "ticks": "",
+        "xtype": [
+            {
+                "source": "sensingkit",
+                "name": "value",
+                "type": "number"
+            }
+        ],
+        "ytype": [],
+        "subtype": "bar",
+        "x": 306,
+        "y": 336,
+        "wires": [
+            [
+                "46f58a41.743ae4"
+            ]
+        ]
+    },
+    {
+        "id": "46f58a41.743ae4",
+        "type": "app",
+        "z": "3f124e16.a4f622",
+        "name": "",
+        "appId": "webapp",
+        "layout": [
+            [
+                "c70f077c.4d0418"
+            ]
+        ],
+        "x": 504,
+        "y": 338,
+        "wires": []
+    }
+]
